@@ -27,3 +27,7 @@ nav li:first-child {
     float: left;
     padding-left: 0;
 }
+
+nav li img{
+    height: 42px;    
+}
