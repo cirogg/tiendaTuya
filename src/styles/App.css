@@ -1,7 +1,29 @@
-.titulo-principal{
-    color: red;
+
+nav{
+    border:1px solid #FF6961;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+    background-color: #FF6961;
+}
+nav li{
+    display:inline;
+}
+nav a{
+    display:inline-block;
+    color: white;
+    padding: 9px 17px;
+    text-decoration: none;
 }
 
-.subtitulo{
-    color: violet;
+nav a:hover {
+    color: black;
+}
+
+nav li:first-child {
+    display:inline;
+    float: left;
+    padding-left: 0;
 }
