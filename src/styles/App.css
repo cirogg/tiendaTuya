@@ -1,5 +1,12 @@
+*{
+    box-sizing: border-box;
+}
 
 nav{
+    display: flex;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
     border:1px solid #FF6961;
     border-width:1px 0;
     list-style:none;
@@ -8,26 +15,86 @@ nav{
     text-align:center;
     background-color: #FF6961;
 }
-nav li{
-    display:inline;
+
+nav ul{    
+    width: 100%;
+    display: flex;       
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
 }
-nav a{
-    display:inline-block;
+
+.divUlNavbar li{
+    padding: 0 60px;
+}
+
+nav a{    
     color: white;
     padding: 9px 17px;
     text-decoration: none;
 }
 
-nav a:hover {
-    color: black;
+.divLogo{
+    margin-left: 40px;
 }
 
-nav li:first-child {
-    display:inline;
-    float: left;
-    padding-left: 0;
+.divCartWidget{
+    margin-right: 40px;
+}
+
+
+nav a:hover {
+    color: black;
 }
 
 nav li img{
     height: 42px;    
 }
+
+/* Item list container */
+
+.divItemListContainer{    
+    border: 3px #FF6961;
+    border-style: solid;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 50px; 
+    text-align: center;
+}
+.divSuperiorItemListContainer{       
+    padding: 25px;
+}
+
+.divInferiorItemListContainer{
+    background: #b19cd9;
+    height: fit-content;    
+}
+
+.divInferiorItemListContainer p{
+    margin: 0;
+}
+
+/* FIN Item list container */
+
+/* Footer */
+
+.Footer{
+    display: flex;
+    width: 100%;
+    background: #FF6961;
+    height: 100px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Fin Footer */
+
+
+

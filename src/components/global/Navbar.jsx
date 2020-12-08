@@ -1,4 +1,6 @@
 import logo from './assets/logotest.png'
+import cartIcon from './assets/cart-icon.png'
+import CartWidget from './CartWidget'
 function Navbar(){
     
 
@@ -19,13 +21,21 @@ function Navbar(){
     return(
         <>  
             <nav>          
-                <ul>
-                    <li><img src={logo} alt="Logo"/></li> 
+                <div className="divLogo">
+                    <li><img src={logo} alt="Logo"/></li>
+                </div>                
+                <div className="divUlNavbar">
+                    <ul>                     
                     <li><a href="" onClick={alertHome}>Home</a></li>
                     <li><a href="" onClick={alertProduts}>Productos</a></li>
                     <li><a href="" onClick={alertHotsale}>Hotsale</a></li>
-                    <li><a href="" onClick={alertAboutUs}>About us</a></li>
-                </ul>
+                    <li><a href="" onClick={alertAboutUs}>About us</a></li>  
+                    </ul>
+                </div>
+                <div className="divCartWidget">
+                    <li><a href="" ><CartWidget /></a></li> 
+                </div>
+                
             </nav>
         </>
     )
