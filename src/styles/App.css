@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
 *{
     box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;    
+}
+
+.mainContainer{
+    display: flex;
+    justify-content: center;
 }
 
 nav{
@@ -53,17 +62,39 @@ nav li img{
 
 /* Item list container */
 
-.divItemListContainer{    
-    border: 3px #FF6961;
-    border-style: solid;
-    border-radius: 5px;
+.divItemListContainer{  
+    width: 300px;
+    height: 400px;        
+    border-radius: 5px;    
     display: inline-block;
     margin-top: 20px;
     margin-left: 50px; 
-    text-align: center;
+    text-align: center;    
 }
 .divSuperiorItemListContainer{       
-    padding: 25px;
+    padding: 0px;
+}
+
+.divSuperiorItemListContainer img{       
+    height: 50%;
+    width: 100%;
+    padding: 0;
+    border-radius: 5px 5px 0px 0px;   
+}
+
+.divSuperiorItemListContainer h3{       
+    margin: 0.5rem;
+    padding: 0%;
+}
+
+.divSuperiorItemListContainer h5{       
+    margin: 0.5rem;
+    padding: 0%;
+}
+
+.divSuperiorItemListContainer h6{       
+    margin: 0.5rem;
+    padding: 0%;
 }
 
 .divInferiorItemListContainer{
@@ -74,6 +105,12 @@ nav li img{
 .divInferiorItemListContainer p{
     margin: 0;
 }
+
+.shadow {
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow:         3px 3px 5px 6px #ccc;
+  }
 
 /* FIN Item list container */
 
@@ -95,6 +132,49 @@ nav li img{
 }
 
 /* Fin Footer */
+
+/* Counter */
+.divItemCounterContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;    
+    justify-content: center;        
+    padding: 10px;
+    margin-top: 10px;    
+}
+
+.divItemCounterContainerInside{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: fit-content;           
+    background-color: rgb(231, 231, 231);
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    max-width: 110px;     
+    min-width: 110px;     
+}
+
+.divItemCounterContainerInside button{    
+    border: 0px ;    
+    background-color: transparent;
+    color: black;        
+    font-size: 18px; 
+    font-weight: bold;  
+}
+
+.divItemCounterContainerInside span{        
+    padding: 0px 18px;
+    background-color: transparent;
+    color: black;    
+    height: 20px;        
+    font-size: 18px;     
+    font-weight: bold;   
+       
+}
+/* Fin Counter */
 
 
 

@@ -8,7 +8,12 @@ function App() {
   return (
     <>
       <Navbar />
-      <ItemListContainer greeting='Este mensajito viene desde App.jsx :)' />      
+      <div className="mainContainer">
+        <ItemListContainer greeting='Este mensajito viene desde App.jsx :)' />      
+        <ItemListContainer greeting='Este mensajito viene desde App.jsx :)' />      
+        <ItemListContainer greeting='Este mensajito viene desde App.jsx :)' />      
+        <ItemListContainer greeting='Este mensajito viene desde App.jsx :)' />    
+      </div>      
       <Footer /> 
     </>
   );
