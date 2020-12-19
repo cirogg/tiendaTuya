@@ -5,7 +5,7 @@ function ItemCounter(){
     const [count, setCount] = useState(0);
 
     useEffect(()=>{
-        console.log("Cambió count")
+        //console.log("Cambió count")
     }, [count])
 
     const suma = () => {setCount(count + 1)}
