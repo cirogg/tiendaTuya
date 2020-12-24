@@ -27,7 +27,7 @@ function Navbar(){
                 <div className="divUlNavbar">
                     <ul>                     
                     <li><a href="" onClick={alertHome}>Home</a></li>
-                    <li><a href="" onClick={alertProduts}>Productos</a></li>
+                    <li><a href="" >SWAPI TEST</a></li>
                     <li><a href="" onClick={alertHotsale}>Hotsale</a></li>
                     <li><a href="" onClick={alertAboutUs}>About us</a></li>  
                     </ul>

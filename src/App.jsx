@@ -4,6 +4,7 @@ import Hero from './components/Home/Hero'
 import Footer from './components/global/Footer'
 import Navbar from './components/global/Navbar';
 import ItemListContainer from './components/global/ItemListContainer';
+import ItemDetailContainer from './components/global/ItemDetailContainer';
 
 function App() {
 
@@ -42,6 +43,15 @@ function App() {
     },2000)
   })
 
+  const getProductsFromDB = async () =>{
+    try {
+      const result = await getProducts;
+      setItems(result)
+    }catch(error){
+      alert('No podemos mostrar los productos en este momento')
+    }
+  }
+
   useEffect(()=>{
     getProducts
     .then(rta => setItems(rta))
@@ -58,6 +68,7 @@ function App() {
             {
               items.map(item =>(
                 <ItemListContainer 
+                key={item.id}
                 titulo={item.titulo} 
                 descripcion={item.descripcion} 
                 precio={item.precio}/>))
@@ -67,7 +78,10 @@ function App() {
         }
          
       </div>      
-      <Footer /> 
+
+      
+      <ItemDetailContainer />
+      
     </>
   );
 }
