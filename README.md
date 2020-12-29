@@ -1,3 +1,6 @@
+Proyecto para aprender un poco de React.
+E-Commerce en proceso. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
