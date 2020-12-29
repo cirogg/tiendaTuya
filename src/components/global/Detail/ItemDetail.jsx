@@ -1,5 +1,3 @@
-import ItemCounter from './ItemCounter';
-
 function ItemDetail(prop){
 
 

@@ -1,88 +1,35 @@
 import './styles/App.css'
-import {useState, useEffect} from 'react';
-import Hero from './components/Home/Hero'
 import Footer from './components/global/Footer'
-import Navbar from './components/global/Navbar';
-import ItemListContainer from './components/global/ItemListContainer';
-import ItemDetailContainer from './components/global/ItemDetailContainer';
+import Navbar from './components/global/Navbar/Navbar';
+import ItemListContainer from './components/global/ItemList/ItemListContainer';
+import ItemDetailContainer from './components/global/Detail/ItemDetailContainer';
+import{BrowserRouter, Switch, Route} from 'react-router-dom'
 
 function App() {
 
-  const [items, setItems] = useState([]);
-
-  const products = [
-    {
-      id: 1,
-      titulo: 'Producto 1',
-      descripcion: 'Descripcion del producto 1',
-      precio:'$1000'
-    },
-    {
-      id: 2,
-      titulo: 'Producto 2',
-      descripcion: 'Descripcion del producto 2',
-      precio:'$2000'
-    },
-    {
-      id: 3,
-      titulo: 'Producto 3',
-      descripcion: 'Descripcion del producto 3',
-      precio:'$3000'
-    },
-    {
-      id: 4,
-      titulo: 'Producto 4',
-      descripcion: 'Descripcion del producto 4',
-      precio:'$4000'
-    }
-  ];
-
-  const getProducts = new Promise((resolve,reject) => {    
-    setTimeout(() => {
-      resolve(products)
-    },2000)
-  })
-
-  const getProductsFromDB = async () =>{
-    try {
-      const result = await getProducts;
-      setItems(result)
-    }catch(error){
-      alert('No podemos mostrar los productos en este momento')
-    }
-  }
-
-  useEffect(()=>{
-    getProducts
-    .then(rta => setItems(rta))
-    .catch(error => console.log(error))
-  }, [])  
 
   return (
-    <>
-      <Navbar />      
-      <div className="mainContainer">
-        {
-          items.length ?
-          <div>
-            {
-              items.map(item =>(
-                <ItemListContainer 
-                key={item.id}
-                titulo={item.titulo} 
-                descripcion={item.descripcion} 
-                precio={item.precio}/>))
-            } 
-          </div> :  
-          <p className='cargando'>Cargando items</p>
-        }
-         
-      </div>      
-
-      
-      <ItemDetailContainer />
-      
-    </>
+    <BrowserRouter>
+    <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <ItemListContainer descripcion={"Productos destacados"} />
+        </Route>
+        <Route path="/detail/:title/:price">
+          <ItemDetailContainer />
+        </Route>     
+        <Route path="/hot-sale">
+          <ItemListContainer descripcion={"Hot Sale!"} campaña={"hotsale"} />
+        </Route>  
+        <Route path="/outlet">
+          <ItemListContainer descripcion={"Outlet!"} campaña={"outlet"} />
+        </Route> 
+        <Route path="*">
+          <p>404</p>
+        </Route>          
+      </Switch>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

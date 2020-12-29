@@ -1,6 +1,7 @@
 import ItemCounter from './ItemCounter';
+import {Link} from 'react-router-dom'
 
-function ItemListContainer(prop){
+function ItemList(prop){
     
 
     return(
@@ -14,9 +15,12 @@ function ItemListContainer(prop){
             <div>
                 <ItemCounter />
             </div>
+            <div>
+                <Link to={`/detail/${prop.titulo}/${prop.precio}`}>Ver mas</Link>                
+            </div>
         </div>
     )
 
 }
 
-export default ItemListContainer
+export default ItemList

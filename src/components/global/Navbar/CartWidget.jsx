@@ -1,4 +1,4 @@
-import cartIcon from './assets/cart-icon.png'
+import cartIcon from '../assets/cart-icon.png'
 function CartWidget(){
 
     //Provisorio

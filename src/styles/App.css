@@ -20,6 +20,16 @@
     justify-content: center;
     align-content: center;
     align-items: center;
+    margin-top: 30px;
+}
+
+.titleProductsPage{
+    display: block;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 nav{
@@ -195,9 +205,9 @@ nav li img{
 
 .divItemDetail{
     display: flex;    
-    align-content: space-around;
-    border: black 1px solid;
+    align-content: space-around;    
     height: auto;
+    margin-top: 40px;
 }
 
 .divItemDetail .divItemDetailLeft{
@@ -208,13 +218,14 @@ nav li img{
 }
 
 .divItemDetail .divItemDetailLeft img{
-    width: 60%;        
+    width: 60%;     
+    border-radius: 25px;   
 }
 
 .divItemDetail .divItemDetailRight{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;        
     text-align: center;    
@@ -227,10 +238,15 @@ nav li img{
 
 .divItemDetail .divItemDetailRight .titulo span{
     font-weight: bold;
+    font-size: 30px;
 }
 
 .divItemDetail .divItemDetailRight .precio span{
     font-weight: bold;
+    font-size: 20px;
+}
+
+.divItemDetail .divItemDetailRight .descripcion span{    
     font-size: 20px;
 }
 
