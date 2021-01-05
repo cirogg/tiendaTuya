@@ -14,10 +14,7 @@ function ItemList(prop){
                 <h3>{prop.titulo}</h3>
                 <h6>{prop.descripcion}</h6>
                 <h5>{prop.precio}</h5>                
-            </div>   
-            <div>
-                <ItemCounter />                
-            </div>
+            </div>               
             <div>
                 <Link to={`/detail/${prop.titulo}/${prop.precio}`}>Ver mas</Link>                
             </div>
