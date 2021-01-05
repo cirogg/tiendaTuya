@@ -72,7 +72,7 @@ function ItemListContainer(prop){
          arrayNuevoDeProducts = arrayDeProducts;
       }
 
-      console.log(arrayNuevoDeProducts);
+      //console.log(arrayNuevoDeProducts);
       return arrayNuevoDeProducts;
     }
 
