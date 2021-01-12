@@ -94,7 +94,7 @@ function ItemListContainer(prop){
               {                
                 items.map(item =>(
                   <ItemList 
-                    key={item.id}
+                    id={item.id}
                     titulo={item.titulo} 
                     descripcion={item.descripcion} 
                     precio={item.precio}/>))

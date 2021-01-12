@@ -16,7 +16,7 @@ function ItemList(prop){
                 <h5>{prop.precio}</h5>                
             </div>               
             <div>
-                <Link to={`/detail/${prop.titulo}/${prop.precio}`}>Ver mas</Link>                
+                <Link to={`/detail/${prop.titulo}/${prop.precio}/${prop.id}`}>Ver mas</Link>                
             </div>
         </div>
     )

@@ -6,6 +6,7 @@ import ItemListContainer from './components/global/ItemList/ItemListContainer';
 import ItemDetailContainer from './components/global/Detail/ItemDetailContainer';
 import Cart from './components/global/Cart/CartContainer';
 import{BrowserRouter, Switch, Route} from 'react-router-dom'
+import {Store} from './store';
 
 function App() {
 
@@ -21,31 +22,38 @@ const windowResize = (e) =>{
     }
   },[]);
 
+  const [data, setData] = useState({
+    items: [],
+    cantidad: 0
+  })
+
   return (
-    <BrowserRouter>
-    <Navbar />
-      <Switch>
-        <Route exact path="/">
-          <ItemListContainer descripcion={"Productos destacados"} />
-        </Route>
-        <Route path="/detail/:title/:price">
-          <ItemDetailContainer />
-        </Route>     
-        <Route path="/hot-sale">
-          <ItemListContainer descripcion={"Hot Sale!"} campaña={"hotsale"} />
-        </Route>  
-        <Route path="/outlet">
-          <ItemListContainer descripcion={"Outlet!"} campaña={"outlet"} />
-        </Route> 
-        <Route path="/cart">
-          <Cart />
-        </Route> 
-        <Route path="*">
-          <p>404</p>
-        </Route>          
-      </Switch>
-      <Footer />
-    </BrowserRouter>
+    <Store.Provider value={[data, setData]}>
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <ItemListContainer descripcion={"Productos destacados"} />
+          </Route>
+          <Route path="/detail/:title/:price/:id">
+            <ItemDetailContainer />
+          </Route>     
+          <Route path="/hot-sale">
+            <ItemListContainer descripcion={"Hot Sale!"} campaña={"hotsale"} />
+          </Route>  
+          <Route path="/outlet">
+            <ItemListContainer descripcion={"Outlet!"} campaña={"outlet"} />
+          </Route> 
+          <Route path="/cart">
+            <Cart />
+          </Route> 
+          <Route path="*">
+            <p>404</p>
+          </Route>          
+        </Switch>
+        <Footer />
+      </BrowserRouter>
+    </Store.Provider>
   );
 }
 

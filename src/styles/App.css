@@ -81,6 +81,65 @@ nav li img{
     height: 42px;    
 }
 
+/*Cart widget navbar*/
+
+.divCartWidget{
+    display: flex
+}
+.divCartWidget span{
+    margin: 0;
+    padding: 0;
+}
+
+.divCartItemListContainer{  
+    width: 400px;
+    height: 120px;        
+    border-radius: 5px;    
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 50px; 
+    text-align: center;    
+}
+.divLeftCartItemListContainer{       
+    padding: 0px;
+    width: 35%;
+    height: 100%;
+}
+
+.divLeftCartItemListContainer img{       
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border-radius: 5px 5px 0px 0px;   
+}
+
+.divRightCartItemListContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.divRightCartItemListContainer h3{       
+    margin: 0.5rem;
+    padding: 0%;
+}
+
+.divRightCartItemListContainer h5{       
+    margin: 0.5rem;
+    padding: 0%;
+}
+
+.divCartContainer {
+    width: 100%;
+    height: 100%;
+}
+
+/* */
+
 /* Item list container */
 
 .divItemListContainer{  
@@ -141,7 +200,7 @@ nav li img{
     display: flex;
     width: 100%;
     background: #FF6961;
-    height: 100px;
+    height: 20px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -254,6 +313,8 @@ nav li img{
 
 
 /*Fin ItemDetail */
+
+
 
 
 

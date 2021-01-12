@@ -1,19 +1,37 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext} from "react";
 import { Redirect } from "react-router-dom";
 import{BrowserRouter, Switch, Route, Link} from 'react-router-dom'
+import { Store } from '../../../store';
 import React from 'react'
 
-function ItemCounter(){
+function ItemCounter(prop){
+
+    const [data, setData] = useContext(Store);    
 
     const [count, setCount] = useState(0);
     const [goToCart, setGoToCart] = useState(false);
     const [redirect, setRedirect] = useState('/cart');   
 
-    const suma = () => {setCount(count + 1)}
-    const resta = () => {setCount(count - 1)}
+    //Provisorio
+
+    const item = {
+        id : prop.id,
+        titulo : prop.titulo,
+        descripcion : prop.descripcion,
+        precio : prop.precio,
+        cantidadDelItem: 0
+    }
+
+    const suma = () => {        
+        setCount(count + 1);  
+    }
+    const resta = () => {        
+        setCount(count - 1);        
+    }
 
     useEffect(()=>{
         //console.log("Cambió count")
+        //setData({...data, cantidad: count});
     }, [count]) 
 
     const countActive = () => {
@@ -25,12 +43,42 @@ function ItemCounter(){
     }
 
     const handleBuyButton = () => {      
+
+        console.log('El id de este item es ' + item.id)
+
         if(count < 1) {
             alert("Elija al menos una unidad")
         } else {     
-            setGoToCart(true);
-            countActive();
-            console.log('ELSE')
+
+            let isInCart = false;
+
+            data.items.forEach(element => {
+                if(element.id === item.id){
+                    isInCart = true;
+                }
+            });
+
+            if(isInCart){
+                alert('Ya agregó este producto a su carrito previamente')
+            }else{
+                item.cantidadDelItem = count;
+                setData({...data, 
+                    cantidad: data.cantidad + count,
+                    items: [...data.items, item] });                     
+            }
+
+                      
+
+            //FUNCIONA
+            // setGoToCart(true);
+            // countActive();
+            // console.log('ELSE')
+
+
+
+
+
+
 
             //setRedirect('/cart'); //Test para el useEffect de abajo comentado que tampoco funciona.
             /* console.log(redirect);    
@@ -65,8 +113,7 @@ function ItemCounter(){
             <div className="divButtonCounter">
                 
                 <button onClick={() => handleBuyButton()}>Comprar</button>
-                    {/* // handleBuyButton() */}
-                    {countActive()}
+                    {/* // handleBuyButton() */}                   
                 
             </div>
         </div>
