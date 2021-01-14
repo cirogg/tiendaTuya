@@ -10,28 +10,28 @@ function ItemListContainer(prop){
         id: 1,
         titulo: 'Producto 1',
         descripcion: 'Descripcion del producto 1 - ¡Esta en HotSale!',
-        precio:'$1000',
+        precio:1000,
         campaña: 'hotsale'
       },
       {
         id: 2,
         titulo: 'Producto 2',
         descripcion: 'Descripcion del producto 2 - ¡Aprovecha en Outlet!',
-        precio:'$2000',
+        precio:2000,
         campaña: 'outlet'
       },
       {
         id: 3,
         titulo: 'Producto 3',
         descripcion: 'Descripcion del producto 3 - ¡Esta en HotSale!',
-        precio:'$3000',
+        precio:3000,
         campaña: 'hotsale'
       },
       {
         id: 4,
         titulo: 'Producto 4',
         descripcion: 'Descripcion del producto 4 - ¡Aprovecha en Outlet!',
-        precio:'$4000',
+        precio:4000,
         campaña: 'outlet'
       }
     ];

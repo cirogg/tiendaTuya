@@ -24,8 +24,11 @@ const windowResize = (e) =>{
 
   const [data, setData] = useState({
     items: [],
-    cantidad: 0
+    cantidad: 0,
+    precioTotal: 0,
+    isCartEmpty: true,
   })
+
 
   return (
     <Store.Provider value={[data, setData]}>
@@ -43,10 +46,10 @@ const windowResize = (e) =>{
           </Route>  
           <Route path="/outlet">
             <ItemListContainer descripcion={"Outlet!"} campaña={"outlet"} />
-          </Route> 
+          </Route>                     
           <Route path="/cart">
             <Cart />
-          </Route> 
+          </Route>
           <Route path="*">
             <p>404</p>
           </Route>          

@@ -1,8 +1,11 @@
 import logo from '../assets/logotest.png'
 import CartWidget from './CartWidget'
 import NavItem from './NavItem';
+import {Store} from '../../../store';
+import {useContext,useEffect} from "react";
 
 function Navbar(){
+    const [data, setData] = useContext(Store);
 
     const menuItems = [
         {
@@ -42,7 +45,11 @@ function Navbar(){
                     </ul>
                 </div>
                 <div className="divCartWidget">
-                    <li><a href=""><CartWidget /></a></li> 
+                    <ul>
+                        <li>
+                            <a href=""><CartWidget /></a>
+                        </li> 
+                    </ul>
                 </div>
                 
             </nav>

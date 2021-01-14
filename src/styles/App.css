@@ -34,6 +34,7 @@
 
 nav{
     display: flex;
+    height: 70px;
     top: 0;
     justify-content: space-between;
     align-items: center;
@@ -68,10 +69,6 @@ nav a{
     margin-left: 40px;
 }
 
-.divCartWidget{
-    margin-right: 40px;
-}
-
 
 nav a:hover {
     color: black;
@@ -84,11 +81,26 @@ nav li img{
 /*Cart widget navbar*/
 
 .divCartWidget{
-    display: flex
+    display: flex;
+    flex-direction: row;
+    margin-right: 40px;
+    padding: 0;
 }
 .divCartWidget span{
     margin: 0;
     padding: 0;
+}
+
+.divCartWidget img{
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.divCartWidget li{      
+    margin: 0;
+    padding: 0 60px;    
 }
 
 .divCartItemListContainer{  
@@ -314,7 +326,28 @@ nav li img{
 
 /*Fin ItemDetail */
 
+/*CART CONTAINER*/
 
+.divCartContainerParent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;    
+    justify-content: center;   
+    
+}
+
+.divCartContainerLeft{
+    width: 100%;
+    text-align: center;
+}
+
+.divCartContainerRight{
+    display: flex;
+    width: 100%;
+    text-align: center;    
+    align-items: center;
+}
 
 
 

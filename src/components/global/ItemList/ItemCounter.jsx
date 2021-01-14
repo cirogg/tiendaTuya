@@ -61,10 +61,18 @@ function ItemCounter(prop){
             if(isInCart){
                 alert('Ya agregó este producto a su carrito previamente')
             }else{
+                console.log(item.precio);
+                console.log(count);
+
                 item.cantidadDelItem = count;
                 setData({...data, 
                     cantidad: data.cantidad + count,
-                    items: [...data.items, item] });                     
+                    items: [...data.items, item],
+                    precioTotal: data.precioTotal + item.precio * count,
+                    isCartEmpty: false });    
+
+                console.log(data);
+                    
             }
 
                       

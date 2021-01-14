@@ -11,14 +11,24 @@ function CartWidget(){
         
     }
 
-    return(
+
+    if (!data.isCartEmpty) {
+       return(
         <div className="divCartWidget">
             <Link to={'/cart'}>
                 <img src={cartIcon} onClick={cartClick} alt="Cart icon"/>
             </Link>
             <span>{data.cantidad}</span>
         </div>
-    )
+    ) 
+    }else{
+        return(
+        <div className="divCartWidget">
+            
+        </div>
+        )
+    }
+    
 
 }
 
